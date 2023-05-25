@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 12px;
+  color: #424242;
+  overflow-x: hidden;
+}
+/* App-Bar */
+.app-bar {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff5b00;
+  position: fixed;
+  z-index: 99;
+}
+
+.app-bar .logo {
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+}
+
+.app-bar .hamburgerMenu {
+  display: none;
+}
+
+.app-bar .navbar {
+  padding-right: 3em;
+}
+
+.navbar .nav-list {
+  display: flex;
+}
+
+.navbar .nav-list .nav-item {
+  list-style: none;
+}
+
+.navbar .nav-list .nav-item a {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.navbar .nav-list .nav-item a:hover {
+  color: black;
+  font-weight: 700;
+}
+
+.navbar .nav-list .nav-item a:after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid black;
+  transform: scaleX(0);
+}
+
+.navbar .nav-list .nav-item a:hover:after {
+  transform: scaleX(0.5);
+  transition: 0.3s linear;
+}
+
+/*hero  */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 5, 0.5), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2.jpg");
+}
+.hero_inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.hero_title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 36px;
+  text-shadow: 1px 1px #141414;
+}
+.hero_subtitle {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px #141414;
+}
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+.content {
+  padding: 32px;
+}
+.find {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.find h1 {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+.restaurant {
+  margin: 32px auto auto;
+  text-align: left;
+  display: grid;
+  grid-row-gap: 16px;
+}
+.list_restaurant {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.kota_restaurant {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  border-radius: 5px;
+  padding: 5px 10px 5px;
+  font-weight: 500;
+  background-color: #990000;
+  color: white;
+}
+.content_restaurant {
+  padding: 16px;
+}
+.thumbnail_restaurant {
+  width: 100%;
+  max-height: 200px;
+}
+.rating_restaurant {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 500;
+}
+.rating_value_restaurant {
+  color: red;
+  text-decoration: none;
+}
+.title_restaurant {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.title_restaurant:hover {
+  color: #990000;
+}
+.title_restaurant a {
+  text-decoration: none;
+  color: inherit;
+}
+.deskripsi_restaurant {
+  margin-top: -30px;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+footer {
+  background-color: #ff5b00;
+  color: white;
+  font-size: 14px;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+}
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 100px;
+}
