@@ -60,6 +60,8 @@ body {
     display: flex;
     align-items: center;
     color: white;
+    min-height: 60px;
+    min-width: 60px;
 
     button {
       color: white;
@@ -68,6 +70,8 @@ body {
       font-size: 18px;
       padding: 8px;
       cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
     }
   }
 
@@ -100,9 +104,35 @@ body {
     //   display: inline-block;
     // }
 
-    // .nav-item{
-    //   display: inline-block;
-    // }
+    .nav-item a{
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        padding: 8px;
+        margin-bottom: 5px;
+        width: 100%;
+        min-height: 44px;
+        min-width: 44px;
+        align-items: center;
+    
+      &:hover {
+        font-weight: 700;
+        
+        &::after {
+          content: "";
+          display: block;
+          padding-bottom: 0.5rem;
+          border-bottom: 0.1rem solid #ffff;
+          transform: scaleX(0);
+          transition: 250ms ease-in-out;
+          
+        }
+      }
+
+
+    }
+    
+    x
     a {
       display: inline-block;
       text-decoration: none;
@@ -110,12 +140,15 @@ body {
       padding: 8px;
       margin-bottom: 5px;
       width: 100%;
+      min-height: 44px;
+      min-width: 44px;
     }
+
   }
 }
 
 .navbar .nav-list .nav-item a:hover:after {
-  transform: scaleX(0.5);
+  transform: scaleX(1);
   transition: 0.3s linear;
 }
 
@@ -129,6 +162,7 @@ body {
   background-position: center;
   background-image: linear-gradient(rgba(0, 0, 5, 0.5), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2.jpg");
 
+  
   .hero-inner {
     margin: 0 auto;
   }
@@ -150,9 +184,29 @@ body {
 }
 
 main {
+  min-height: 81vh;
   width: 100%;
   margin: 0 auto;
-
+  .container-detail {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    img {
+      width: 100%;
+      border-radius: 5px;
+      border: 2px solid #27374D;
+    }
+  
+    .restaurant-info {
+      margin-top: 20px;
+    }
+  }
   .content {
     padding: 32px;
   }
@@ -161,7 +215,7 @@ main {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 50px;
-    text-align: center;
+    text-align: left;
 
     h1 {
       font-weight: 700;
@@ -218,12 +272,159 @@ main {
       min-width: 44px;
       min-height: 44px;
     }
+
+    
   }
+
+  // detail restaurant
+  .restaurant-s4 {
+    position: relative;
+  }
+  
+  .restaurant_detail {
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(50, 31, 5, 0.2);
+  }
+  
+  .thumbnail_restaurant_detail {
+    width: 100%;
+    max-height: 450px;
+    position: relative;
+  }
+  
+  .title_restaurant_detail {
+    position: absolute;
+    bottom: 40%;
+    left: 24px;
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    width: 100%;
+  
+    @media screen and (max-width: 767px) {
+      position: static;
+      margin-top: 20px;
+      text-align: left;
+      color: #141414;
+      margin-left: 15px;
+    }
+  }
+  
+  .rating_value-restaurant_detail {
+    position: absolute;
+    bottom: 35%;
+    left: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    width: 100%;
+  
+    @media screen and (max-width: 767px) {
+      position: static;
+      margin-top: 10px;
+      text-align: left;
+      margin-left: 15px;
+      color: #141414;
+    }
+  }
+  
+  .content_restaurant_detail {
+    padding: 10px;
+  
+    .deskripsi_restaurant_detail,
+    .address_detail {
+      font-size: 20px;
+    }
+  
+    .deskripsi_restaurant_detail {
+      text-indent: 2em;
+      text-align: justify;
+    }
+  
+    .address_detail {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+  }
+  
+
+  .detail_menu_review {
+    display: flex;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+  
+    .menu-container {
+      flex: 1;
+  
+      .menus {
+        h3 {
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+  
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
+  
+        br {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  
+    .review-container {
+      flex: 1;
+  
+      .Review {
+        h3 {
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+  
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: stretch;
+  
+      .menu-container,
+      .review-container {
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  
+  
+
+
+
+  
+  
 
   .title_restaurant {
     font-weight: 700;
     font-size: 24px;
     transition: 0.3s;
+    margin-top: -20px;
 
     a {
       text-decoration: none;
@@ -239,16 +440,36 @@ main {
   }
 
   .deskripsi_restaurant {
-    margin-top: -50px;
+    margin-top: -60px;
     font-size: 12px;
     line-height: 1.5em;
   }
 }
 
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
 // Footer
 footer {
-  background-color: $color-primary;
-  color: white;
+  color: $color-text;
   font-size: 14px;
   padding: 2em;
   width: 100%;
