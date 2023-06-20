@@ -53,7 +53,7 @@ body {
   gap: 10px;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 999;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   .menu {
@@ -96,6 +96,7 @@ body {
     padding: 8px;
     background-color: $color-primary;
     overflow: hidden;
+    z-index: 999;
 
     &.open {
       left: 0;
@@ -262,17 +263,11 @@ main {
   .rating_restaurant {
     font-size: 16px;
     text-transform: uppercase;
-    color: #999;
     font-weight: 500;
-
-    .rating_value_restaurant {
-      color: red;
-      text-decoration: none;
-      display: inline-block;
-      min-width: 44px;
-      min-height: 44px;
-    }
-
+    text-decoration: none;
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
     
   }
 
@@ -296,7 +291,7 @@ main {
     position: relative;
   }
   
-  .title_restaurant_detail {
+  .title_restaurant {
     position: absolute;
     bottom: 40%;
     left: 24px;
