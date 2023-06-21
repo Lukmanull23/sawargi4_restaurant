@@ -1,19 +1,55 @@
-Feature('Liking Restaurant');
+const assert = require('assert');
 
-Scenario('Menyukai salah satu restaurant dan membatalkannya', async({ I }) => {
+Feature('Liking Restaurants');
+
+Scenario('liking one restaurant', async ({ I }) => {
     I.amOnPage('/');
-    I.wait(2);
-    I.seeElement('.title_restaurant');
-    await I.grabTextFrom(locate('.title_restaurant').first());
-    I.click(locate('.title_restaurant').first());
-    I.wait(2);
-    I.click('#likeButton');
-    I.amOnPage('/#/like');
-    I.click(locate('.title_restaurant').first());
-    I.wait(2);
+    
+    pause();
+
+    I.waitForVisible('.title_restaurant');
+    I.seeElement('.title_restaurant a');
+    const firstRestaurant = locate('.title_restaurant a').first();
+    const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
+
+    I.click(firstRestaurant);
 
     I.seeElement('#likeButton');
     I.click('#likeButton');
-    I.amOnPage('/#/like');
-    I.dontSeeElement('.title_restaurant');
+
+    I.amOnPage('/#/favorite');
+    I.seeElement('.list_restaurant');
+    const unlikeRestaurantName = await I.grabTextFrom('.title_restaurant');
+
+    assert.strictEqual(firstRestaurantName, unlikeRestaurantName);
+});
+
+Scenario('unliking one restaurant', async ({ I }) => {
+    I.amOnPage('/');
+    I.waitForVisible('.title_restaurant');
+    I.seeElement('.title_restaurant a');
+
+    const firstRestaurant = locate('.title_restaurant a').first();
+    const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
+
+    I.click(firstRestaurant);
+
+    I.seeElement('#likeButton');
+    I.click('#likeButton');
+
+    I.amOnPage('/#/favorite');
+    I.seeElement('.list_restaurant');
+
+    const unlikeRestaurantName = await I.grabTextFrom('.title_restaurant');
+    assert.strictEqual(firstRestaurantName, unlikeRestaurantName);
+
+    I.seeElement('.title_restaurant a');
+    const firstRestoFav = locate('.title_restaurant a').first();
+    I.click(firstRestoFav);
+
+    I.seeElement('#likeButton');
+    I.click('#likeButton');
+
+    I.amOnPage('/#/favorite');
+    I.dontSeeElement('.list_restaurant');
 });

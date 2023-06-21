@@ -157,12 +157,21 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  min-height: 380px;
+  min-height: 400px;
   width: 100%;
   text-align: center;
+  background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 5, 0.5), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 5, 0.5), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2-large.jpg");
+  background-repeat: no-repeat;
+  object-fit: cover;
 
+  @media screen and (max-width: 480px){
+    background-image: linear-gradient(rgba(0, 0, 5, 0.5), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2-small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  }
   
   .hero-inner {
     margin: 0 auto;
@@ -189,6 +198,7 @@ main {
   width: 100%;
   margin: 0 auto;
   .container-detail {
+    padding: 2em;
     width: 100%;
     padding: 40px;
     box-sizing: border-box;
@@ -261,6 +271,7 @@ main {
   }
 
   .rating_restaurant {
+    margin-top: -2em;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
@@ -289,42 +300,40 @@ main {
     width: 100%;
     max-height: 450px;
     position: relative;
+    margin-bottom: 2em;
   }
   
-  .title_restaurant {
-    position: absolute;
-    bottom: 40%;
-    left: 24px;
-    font-size: 32px;
-    font-weight: 500;
-    color: white;
-    width: 100%;
+  // .title_restaurant {
+  //   position: absolute;
+  //   bottom: 40%;
+  //   left: 24px;
+  //   font-size: 32px;
+  //   font-weight: 500;
+  //   color: white;
+  //   width: 100%;
   
-    @media screen and (max-width: 767px) {
-      position: static;
-      margin-top: 20px;
-      text-align: left;
-      color: #141414;
-      margin-left: 15px;
-    }
-  }
+  //   @media screen and (max-width: 767px) {
+  //     position: static;
+  //     margin-top: 20px;
+  //     text-align: left;
+  //     color: #141414;
+  //     margin-left: 15px;
+  //   }
+  // }
   
   .rating_value-restaurant_detail {
-    position: absolute;
-    bottom: 35%;
-    left: 24px;
     font-size: 20px;
     font-weight: 500;
-    color: white;
+    color: #141414;
     width: 100%;
   
-    @media screen and (max-width: 767px) {
-      position: static;
-      margin-top: 10px;
-      text-align: left;
-      margin-left: 15px;
-      color: #141414;
-    }
+    // @media screen and (max-width: 767px) {
+    //   position: static;
+    //   margin-top: 10px;
+    //   text-align: left;
+    //   margin-left: 15px;
+    //   color: #141414;
+    // }
   }
   
   .content_restaurant_detail {

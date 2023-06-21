@@ -4,6 +4,8 @@ import '../styles/responsive.scss';
 import App from './views/app';
 import "./globals/api-endpoint";
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

@@ -10,7 +10,6 @@ const Home = {
           <p class="hero-subtitle">Kumpulan Restoran Kesayangan Keluarga Anda!</p>
         </div>
       </div>
-
       <section class="content">
         <div class="find">
           <h1>Temukan Restoran Anda!</h1>

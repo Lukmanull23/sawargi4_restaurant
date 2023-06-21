@@ -6,7 +6,7 @@ const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="likeButtonContainer"></div>';
 };
 
-describe('Unliking A Resto', () => {
+describe('Unliking A Restaurant', () => {
     beforeEach(async () => {
         addLikeButtonContainer();
         await FavoriteRestaurants.putRestaurant({ id: 1 });
@@ -16,7 +16,7 @@ describe('Unliking A Resto', () => {
         await FavoriteRestaurants.deleteRestaurant(1);
     });
 
-    // test 6 (unlike)
+    // tes 6 (unlike)
     it('should display unlike widget when the Restaurannt has been liked', async () => {
         await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
@@ -24,7 +24,7 @@ describe('Unliking A Resto', () => {
             .toBeTruthy();
     });
 
-    // test 7
+    // tes 7
     it('should not display like widget when the Restaurant has been liked', async () => {
         await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
@@ -32,7 +32,7 @@ describe('Unliking A Resto', () => {
             .toBeFalsy();
     });
 
-    // test 8
+    // tes 8
     it('should be able to remove liked Restaurant from the list', async () => {
         await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
@@ -41,14 +41,14 @@ describe('Unliking A Resto', () => {
         expect(await FavoriteRestaurants.getAllRestaurants()).toEqual([]);
     });
 
-    // test 9
+    // tes 9
     it('should not throw error if the unliked Restaurant is not in the list', async () => {
         await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
-        // hapus dulu restaurant dari daftar restaurant yang disukai
+        // menghapus restaurant dari daftar restaurant yang disukai
         await FavoriteRestaurants.deleteRestaurant(1);
 
-        // kemudian, simulasikan pengguna menekan widget batal menyukai restaurant
+        //  pengguna menekan lagi widget batal menyukai restaurant
         document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
 
         expect(await FavoriteRestaurants.getAllRestaurants()).toEqual([]);
